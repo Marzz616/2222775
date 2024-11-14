@@ -1,4 +1,4 @@
-//H11.0 De Array
+ //H11.0 De Array
 //  In dit doosje kon je informatie stoppen en eruit halen. Dit was wat een variabele deed.
 //Een array is eigenlijk een stapel doosjes met allemaal dezelfde naam
 //Hoe weet ik je nu het verschil tussen de doosjes. Het verschil weet je door een nummer.
