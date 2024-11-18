@@ -1,0 +1,20 @@
+*{  margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10rem;
+    font-weight: 400;
+    color:black;
+    text-align: center;
+    background-color:azure;
+    background-image: image();
+    background-repeat:repeat-y;
+    background-size: contain;
+}
+
+.box1{
+    border: 200;
+    border-style: ridge;
+    border-width: 1rem;
+    border-color: black;
+    border-radius: 1rem;
+}
