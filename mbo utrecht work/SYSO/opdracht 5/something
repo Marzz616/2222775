@@ -1,0 +1,61 @@
+
+    <?php 
+    class Book {
+        //properties 
+        public array()$author;
+        public $title;
+        public $pages;
+
+        //Methods
+        function __construct($Author, $Title, $Pages){
+            $this->auther = $Auther;
+            $this->title = $Title ;      
+            $this->pages = $Pages;
+        }
+    }
+        //Objects
+        
+        $Raymond 
+    ?>
+
+
+<?php
+
+class Book {
+    private $title;
+    private $authorFirstName;
+    private $authorLastName;
+    private $pages;
+
+    public function setTitle($title) {
+        $this->title = $title;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+
+    public function setAuthor($firstName, $lastName) {
+        $this->authorFirstName = $firstName;
+        $this->authorLastName = $lastName;
+    }
+
+    public function getAuthor() {
+        $author = $this->authorFirstName != "" ? $this->authorFirstName : '-';
+        $author .= " ";
+        $author .= $this->authorLastName != "" ? $this->authorLastName : '-';
+        return $author;
+    }
+
+    public function setPages($pages) {
+        if ($pages >= 0 && $pages <= 500) {
+            $this->pages = $pages;
+        } else {
+            echo "Het aantal pagina's moet tussen 0 en 500 liggen.";
+        }
+    }
+
+    public function getPages() {
+        return $this->pages;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Rheader+ footer.css">
+    <link rel="stylesheet" href="css/RBQ.css">
+    <link rel="stylesheet" href="login.js">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="wrapper">
+                <a href="Roblox.html">
+                <img src="fotos/roblox.png"  class="logo"></a>
+                <!-- <div class="logo"><a href="#">Logo</a>-->
+              <input type="radio" name="slider" id="menu-btn">
+              <input type="radio" name="slider" id="close-btn">
+              <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                <li><a href="Roblox.html">Home</a></li>
+                <li><a href="RobloxGames.html">RobloxGames</a></li>
+                <li><a href="robloxQ.html">ROGO</a></li>
+                <li>
+                  <a href="#" class="desktop-item">Menu</a>
+                  <input type="checkbox" id="showDrop">
+                  <label for="showDrop" class="mobile-item">Other games</label>
+                  <ul class="drop-menu">
+                    <li><a href="#">Fortnite</a></li>
+                    <li><a href="index.html">Call of Duty</a></li>
+                    <li><a href="#">Bawlhalla</a></li>
+                    <li><a href="#">Among Us</a></li>
+                </ul>
+                </li>
+              </ul>
+              <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+            </div>
+          </nav>
+        </header>
+        
+        <main>
+          <section class="contain">
+          <div class="box1">
+                    <h1>What's your username?</h1>
+                  <!-- New Form Section -->
+                  <div>                    
+                    <form method="post" action="click" onclick="login();">
+                        <label for="username">Roblox name: </label>
+                        <input type="text" name="username" id="username"><br><br>
+                
+                        <label for="join date">join date:</label>
+                        <input type="date" id="join date" name="join date">
+                      <br> 
+                      <br>
+                        <button type="button" >enter</button>
+                    </form>
+                    <div id="message"></div>
+                </div>
+              </div> 
+            </section>          
+        </main>
+        <footer>
+          <section class="">
+          <div>
+        <p class="fth">Service & contact<p>
+          </div>
+        
+          <div>
+            contact us at +3106-2711-1950
+          </div>
+        
+          </section>
+        </footer>
+
+
+</body>
+</html>

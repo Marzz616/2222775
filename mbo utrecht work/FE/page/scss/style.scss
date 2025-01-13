@@ -1,0 +1,35 @@
+nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    width: 100;
+    background-color: aliceblue;
+}
+.banner {
+    position: relative;
+    width: 100%;
+    height: max(50vh, 30rem);
+
+    img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .content{
+        .inner{
+            background-color: aliceblue;
+        }
+        .icon {
+            display: inline-flex;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

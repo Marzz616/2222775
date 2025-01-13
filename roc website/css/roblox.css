@@ -1,0 +1,51 @@
+.container01{
+position: relative;
+display: grid;
+max-width: 70%;
+margin: 0 auto;
+padding:1em 0 1em 0;
+flex: 1 1 100px;
+flex-direction: column;
+}
+.boxer01{
+    width: 80%; /* Set the width of the box */
+    height: auto; /* Change height to auto to accommodate content */
+    margin-top: 30px; /* Add top margin */
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    position: relative;
+    margin-left: 1rem; 
+    margin: auto; 
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.texter {
+    font-size: medium;
+    text-align: center;
+}
+
+
+.center{
+    text-align: center;
+    
+}
+
+.banner01 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../fotos/roblox\ banner.webp");
+    height: 2rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 18.5rem;
+    padding-bottom: 18.5rem;
+    margin-top: -3.2rem; /* Adjust to move the banner under the nav bar */
+  }
+
+  .white{
+    color:white;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pac-Man</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  canvas {
+    border: 2px solid #fff;
+  }
+</style>
+</head>
+<body>
+<canvas id="pacmanCanvas" width="400" height="400"></canvas>
+<script>
+  const canvas = document.getElementById("pacmanCanvas");
+  const ctx = canvas.getContext("2d");
+  
+  const pacMan = {
+    x: 200,
+    y: 200,
+    radius: 15,
+    mouthOpen: 0
+  };
+
+  function drawPacMan() {
+    ctx.beginPath();
+    ctx.fillStyle = "#FFD700";
+    ctx.arc(pacMan.x, pacMan.y, pacMan.radius, (pacMan.mouthOpen + 0.1) * Math.PI, (2 - pacMan.mouthOpen) * Math.PI);
+    ctx.lineTo(pacMan.x, pacMan.y);
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function update() {
+    clearCanvas();
+    drawPacMan();
+    pacMan.mouthOpen = (pacMan.mouthOpen + 0.1) % 2;
+  }
+
+  setInterval(update, 100);
+</script>
+</body>
+</html>

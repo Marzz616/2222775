@@ -1,0 +1,57 @@
+*
+h4{
+  position: relative;
+  text-align:center;
+}
+
+.containerR {
+    display: flex;
+  grid-template-columns: 1fr 1fr;
+  max-width: 70%;
+  margin: 0 auto;
+  height: auto;
+
+  position: relative;
+  padding:1em 0 1em 0;
+  flex: 1 1 100px;
+  flex-direction: row;
+  background-color: #ffffff;
+}
+
+.box1{
+  width: 35rem; /* Set the width of the box */
+  height: 20rem; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  margin-left: 1.3rem; 
+  
+  position: relative;
+  margin: auto; /* Center the box horizontally */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around; /* Space items evenly horizontally */
+}
+
+.box2{
+  width: 35rem; /* Set the width of the box */
+  height: 20rem; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  
+
+  position: relative;
+  margin-left: 0rem; 
+  margin: auto; /* Center the box horizontally */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around; /* Space items evenly horizontally */
+
+}
+
+.vidL{
+  position: relative;
+}
+
+.vidR{
+  position: relative;
+}

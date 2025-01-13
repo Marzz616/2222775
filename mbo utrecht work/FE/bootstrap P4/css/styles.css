@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+/* Styling for the background image */
+.bg-image {
+  position: relative;
+  background-color: #edf50f;
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-size: cover; /* Scale the background image to cover the entire container */
+  color: white; /* Set text color to white */
+  padding: 10em;
+}
+.main{
+  padding-top: 5;
+}
+.content{
+  display: grid;
+  /*grid-template-columns: 33.3% 33.3% 33.3%;*/
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 960px;
+  margin: 0 auto;
+  padding:1em 0 1em 0;
+  flex: 1 1 100px;
+
+  background-color: #20813a;
+}
+
+.info-1 {
+  width: 75%; /* Set the width of the box */
+  height: auto; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  margin: auto; /* Center the box horizontally */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly horizontally */
+  background-color: rgb(85, 163, 137);
+}
+
+.info-2 {
+  width: 75%; /* Set the width of the box */
+  height: auto; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  margin: auto; /* Center the box horizontally */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly horizontally */
+  background-color: rgb(85, 163, 137);
+}
+
+.info-3 {
+  width: 75%; /* Set the width of the box */
+  height: auto; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  margin: auto; /* Center the box horizontally */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly horizontally */
+  background-color: rgb(85, 163, 137);
+}
+
+.info-4 {
+  width: 75%; /* Set the width of the box */
+  height: auto; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  margin: auto; /* Center the box horizontally */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly horizontally */
+  background-color: rgb(85, 163, 137);
+}

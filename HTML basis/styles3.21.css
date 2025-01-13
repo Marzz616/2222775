@@ -6,6 +6,8 @@
     color:black;
     text-align: center;
     background-color:azure;
+}
+   .banner{
     background-image: image();
     background-repeat:repeat-y;
     background-size: contain;

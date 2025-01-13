@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="BP-toets" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Toets</title>
+  <style>
+    img {
+      max-width: 500px;
+      min-width: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Plaatjesgrootte instellen </h1>
+
+  <button onclick="vergrootPlaatje()">+</button>
+  <button onclick="verkleinPlaatje()">-</button>
+  <button onclick="resetPlaatje()">Reset</button>
+
+  <label for="stapgrootte">Stapgrootte:</label>
+  <input type="number" id="stapgrootte" placeholder="Voer stapgrootte in">
+  <button onclick="pasStapgrootteAan()">Aanpassen</button>
+
+  <br>
+
+  <label for="afbeeldingsUrl">Afbeelding URL:</label>
+  <input type="text" id="afbeeldingsUrl" placeholder="Voer afbeeldings-URL in">
+  <button onclick="updateAfbeelding()">Update Afbeelding</button>
+ 
+  <img id="plaatje" src="bp toets hond.png"Plaatje">
+
+  <script src="script.js"></script>
+</body>
+</html>

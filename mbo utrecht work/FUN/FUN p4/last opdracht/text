@@ -1,0 +1,42 @@
++----------------+
+|      User      |
++----------------+
+| -userID: int   |
+| -name: string  |
+| -email: string |
++----------------+
+| +register()    |
+| +login()       |
++----------------+
+       ^
+       |
++------------------+
+|    Customer      |
++------------------+
+| -reservations: []|
++------------------+
+| +makeReservation()|
+| +cancelReservation()|
++------------------+
+       ^
+       |
++------------------+
+|    Service       |
++------------------+
+| -serviceID: int  |
+| -name: string    |
+| -price: float    |
++------------------+
+| +book()          |
+| +cancel()        |
++------------------+
+       ^
+       |
++-----------------+  +-------------------+  +------------------+
+|   HotelRoom     |  | RestaurantTable   |  |    CarRental     |
++-----------------+  +-------------------+  +------------------+
+| -roomNumber: int|  | -tableNumber: int |  | -carModel: string|
+| -type: string   |  | -capacity: int    |  | -rentalPeriod: int|
++-----------------+  +-------------------+  +------------------+
+| +bookRoom()     |  | +bookTable()      |  | +rentCar()       |
++-----------------+  +-------------------+  +------------------+

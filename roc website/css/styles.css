@@ -1,0 +1,30 @@
+
+.containerR {
+display: grid;
+  grid-template-columns: 1fr;
+  max-width: 60%;
+  margin: 0 auto;
+  padding:1em 0 1em 0;
+  flex: 1 1 100px;
+  flex-direction: column;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.box1{
+  width: 35rem; /* Set the width of the box */
+  height: 20rem; /* Change height to auto to accommodate content */
+  margin-top: 30px; /* Add top margin */
+  
+  margin-left: 1.3rem; 
+  margin: auto; /* Center the box horizontally */
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: space-around; /* Space items evenly horizontally */
+}
+
+.box2{
+    text-align: center;
+
+}

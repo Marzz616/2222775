@@ -1,0 +1,23 @@
+We gaan verder met ons Attraction / Rollercoaster programma.
+Voeg hier een nieuw type method aan toe: getIntencity
+Voor een Attraction moet die eenvoudig teruggeven: familie attractie
+Voor een Rollercoaster
+Hoger dan 30 meter en met een snelheid boven de 50kmh: heftig
+Hoger dan 50 meter of met een snelheid boven de 70kmh: intense
+Anders: leuk
+Maak in een array verschillende rides aan en loop erdoorheen waarbij je getIntencity() aanroept
+
+We breiden getIntencity verder uit.
+Voor een Rollercoaster als deze 2 of meer loopings heft, dan is die altijd mega
+ 
+We gaan verder met ons Attraction / Rollercoaster programma.
+Voeg hier een nieuw type class aan toe: Caroussel
+Maak nog een class Caroussel, welke ook een extension van Attraction is
+Met hierin de property : rpm (=rotation per minute)
+
+We breiden getIntencity verder uit voor caroussel.
+Voor een Rollercoaster als deze 2 of meer loopings heeft, dan is die altijd mega
+De getIntencity moet terugmelden:
+Bij een rpm onder de 3: familie
+Bij een rpm tussen van 3 tot en met 10: heftig
+Bij een rpm boven de 10: intens

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pac-Man</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  canvas {
+    border: 2px solid #fff;
+  }
+</style>
+</head>
+<body>
+<canvas id="pacmanCanvas" width="400" height="400"></canvas>
+<script>
+  const canvas = document.getElementById("pacmanCanvas");
+  const ctx = canvas.getContext("2d");
+  
+  const gridSize = 20; // Size of each grid cell
+  const rows = 20; // Number of rows
+  const cols = 20; // Number of columns
+
+  const pacMan = {
+    x: 9 * gridSize,
+    y: 15 * gridSize,
+    radius: 10,
+    speed: 2,
+    direction: "right"
+  };
+
+  const ghosts = [
+    { x: 9 * gridSize, y: 9 * gridSize, radius: 10, speed: 1, direction: "right" },
+    { x: 9 * gridSize, y: 10 * gridSize, radius: 10, speed: 1, direction: "left" }
+  ];
+
+  let pellets = [];
+  let score = 0;
+  let lives = 3;
+  let gameInterval;
+
+  // Initialize game
+  initializeGame();
+
+  function initializeGame() {
+    generatePellets();
+    gameInterval = setInterval(update, 100);
+  }
+
+  function generatePellets() {
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        if ((row === 3 || row === 16) && (col < 3 || col > 16)) continue; // Exclude the ghost house
+        if ((row === 9 || row === 10) && (col > 7 && col < 12)) continue; // Exclude the ghost door
+        pellets.push({ x: col * gridSize + gridSize / 2, y: row * gridSize + gridSize / 2 });
+      }
+    }
+  }
+
+  function drawPacMan() {
+    ctx.beginPath();
+    ctx.fillStyle = "#FFD700";
+    ctx.arc(pacMan.x, pacMan.y, pacMan.radius, (pacMan.direction === "left" ? 0.25 : 1.25) * Math.PI, (pacMan.direction === "left" ? 1.75 : 0.75) * Math.PI);
+    ctx.lineTo(pacMan.x, pacMan.y);
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function drawGhosts() {
+    ctx.fillStyle = "#FF0000";
+    ghosts.forEach(ghost => {
+      ctx.beginPath();
+      ctx.arc(ghost.x, ghost.y, ghost.radius, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.closePath();
+    });
+  }
+
+  function drawPellets() {
+    ctx.fillStyle = "#FFFFFF";
+    pellets.forEach(pellet => {
+      ctx.beginPath();
+      ctx.arc(pellet.x, pellet.y, 2, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.closePath();
+    });
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function update() {
+    clearCanvas();
+    drawPellets();
+    drawPacMan();
+    drawGhosts();
+    movePacMan();
+    moveGhosts();
+    checkCollisions();
+  }
+
+  function movePacMan() {
+    switch (pacMan.direction) {
+      case "up":
+        pacMan.y -= pacMan.speed;
+        break;
+      case "down":
+        pacMan.y += pacMan.speed;
+        break;
+      case "left":
+        pacMan.x -= pacMan.speed;
+        break;
+      case "right":
+        pacMan.x += pacMan.speed;
+        break;
+    }
+    checkWallCollision(pacMan);
+    checkTeleportation(pacMan);
+  }
+
+  function moveGhosts() {
+    ghosts.forEach(ghost => {
+      const directions = ["up", "down", "left", "right"];
+      const newDirection = directions[Math.floor(Math.random() * directions.length)];
+      switch (newDirection) {
+        case "up":
+          ghost.y -= ghost.speed;
+          break;
+        case "down":
+          ghost.y += ghost.speed;
+          break;
+        case "left":
+          ghost.x -= ghost.speed;
+          break;
+        case "right":
+          ghost.x += ghost.speed;
+          break;
+      }
+      checkWallCollision(ghost);
+      checkTeleportation(ghost);
+    });
+  }
+
+  function checkWallCollision(entity) {
+    if (entity.x < 0) entity.x = canvas.width;
+    if (entity.x > canvas.width) entity.x = 0;
+    if (entity.y < 0) entity.y = canvas.height;
+    if (entity.y > canvas.height) entity.y = 0;
+  }
+
+  function checkTeleportation(entity) {
+    if (entity.x < 0) entity.x = canvas.width - gridSize;
+    if (entity.x > canvas.width) entity.x = gridSize;
+  }
+
+  function checkCollisions() {
+    // Check collision between Pac-Man and pellets
+    pellets.forEach((pellet, index) => {
+      const dx = pacMan.x - pellet.x;
+      const dy = pacMan.y - pellet.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < pacMan.radius + 2) {
+        pellets.splice(index, 1);
+        score += 10;
+      }
+    });
+
+    // Check collision between Pac-Man and ghosts
+    ghosts.forEach(ghost => {
+      const dx = pacMan.x - ghost.x;
+      const dy = pacMan.y - ghost.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < pacMan.radius + ghost.radius) {
+        lives--;
+        if (lives === 0) {
+          clearInterval(gameInterval);
+          alert("Game Over! Your score: " + score);
+          resetGame();
+        } else {
+          resetPositions();
+        }
+      }
+    });
+
+    // Check if all pellets are collected
+    if (pellets.length === 0) {
+      clearInterval(gameInterval);
+      alert("Congratulations! You won! Your score: " + score);
+      resetGame();
+    }
+  }
+
+  function resetGame() {
+    score = 0;
+    lives = 3;
+    pellets = [];
+    initializeGame();
+  }
+
+  function resetPositions() {
+    pacMan.x = 9 * gridSize;
+    pacMan.y = 15 * gridSize;
+    ghosts.forEach(ghost => {
+      ghost.x = 9 * gridSize;
+      ghost.y = 9 * gridSize;
+    });
+  }
+
+  // Controls
+  document.addEventListener("keydown", function(event) {
+    switch (event.key) {
+      case "ArrowUp":
+        pacMan.direction = "up";
+        break;
+      case "ArrowDown":
+        pacMan.direction = "down";
+        break;
+      case "ArrowLeft":
+        pacMan.direction = "left";
+        break;
+      case "ArrowRight":
+        pacMan.direction = "right";
+        break;
+    }
+  });
+</script>
+</body>
+</html>

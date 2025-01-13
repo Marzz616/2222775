@@ -1,0 +1,24 @@
+/* Error: @use rules must be written before any other rules.
+ *    ,
+ * 26 | / @use "bulma/sass" with (
+ * 27 | |     $family-primary: '"Open Sans", sans-serif',
+ * 28 | |     $family-secondary: '"Montserrat", sans serif',
+ * 29 | |     $grey-dark: #111111,
+ * 30 | |     $primary: #dacf50,
+ * 31 | |     $control-border-width: 2px,
+ * 32 | |     $input-shadow: none
+ * 33 | | );
+ *    | '-^
+ *    '
+ *   scss\styles.scss 26:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: @use rules must be written before any other rules.\a    \2577 \a 26 \2502  \250c  @use \"bulma/sass\" with (\a 27 \2502  \2502      $family-primary: '\"Open Sans\", sans-serif',\a 28 \2502  \2502      $family-secondary: '\"Montserrat\", sans serif',\a 29 \2502  \2502      $grey-dark: #111111,\a 30 \2502  \2502      $primary: #dacf50,\a 31 \2502  \2502      $control-border-width: 2px,\a 32 \2502  \2502      $input-shadow: none\a 33 \2502  \2502  );\a    \2502  \2514 \2500 ^\a    \2575 \a   scss\\styles.scss 26:1  root stylesheet";
+}

@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM-Sans', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    font-family: "Fjalla-One";
+    font-size: 3rem;
+  }
+  
+  body {
+    height: 95vh;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    position: relative;
+    padding-top: 0px;
+    padding-bottom: 3rem;
+  }
+  
+  .contentor1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+  
+  .contentor2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+  
+  .bgm, .bgm2, .bgm3 {
+    position: relative;
+    background-color: #000000;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    border-radius: 10%;
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+  }
+  
+  .bgm {
+    background-image: url(../Fotos/CATERING3.jpg);
+  }
+  
+  .bgm2 {
+    background-image: url(../Fotos/Catering4.jpg);
+  }
+  
+  .bgm3 {
+    background-image: url(../Fotos/CATERING5.webp);
+  }
+  
+  .box1, .box2, .box3, .boxL, .review3 {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+    margin-top: 30px;
+  }
+  
+  .boxL {
+    height: auto;
+    margin-top: 5rem;
+    text-align: left;
+    border: 4px solid;
+  }
+  
+  .review3 {
+    background-color: #fa650f;
+    border: 4px solid;
+    text-align: left;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .boxL {
+      margin-top: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1, h2, h3 {
+      font-size: 2rem;
+    }
+    
+    .bgm, .bgm2, .bgm3 {
+      padding: 5px;
+    }
+  }
+  
